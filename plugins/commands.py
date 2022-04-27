@@ -22,10 +22,9 @@ buttons=InlineKeyboardMarkup(
 
 @Client.on_message(filters.private & filters.command('start'))
 async def start(client, message):
-    await client.send_photo(
+    await client.send_message(
         chat_id=message.chat.id,
-        photo="https://telegra.ph/file/db40b8e4d0020b309d01f.jpg",
-        caption=START_MSG.format(
+        text=START_MSG.format(
                 message.from_user.first_name),
         reply_markup=buttons,
         parse_mode="html")
